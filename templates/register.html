@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        {% load static %}
+		<meta charset="utf-8">
+		<title>BreviBot-Register</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="{%static 'css2/fonts/linearicons/style.css'%}">
+		
+		<!-- STYLE CSS -->
+        <link href="{%static 'assets/img/favicon.png'%}" rel="icon">
+  <link href="{%static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ninestars Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{%static 'assets/img/favicon.png'%}" rel="icon">
+  <link href="{%static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{%static 'assets/vendor/aos/aos.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+		<link rel="stylesheet" href="{%static 'css2/css/style.css'%}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+                        
+        <link href="{%static 'css1/css/bootstrap.min.css'%}" rel="stylesheet">
+
+        <link href="{%static 'css1/css/bootstrap-icons.css'%}" rel="stylesheet">
+
+        <link href="{%static 'css1/css/templatemo-topic-listing.css'%}" rel="stylesheet">
+        <style>
+            .navbar {
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-weight: bold;
+            color:#1A1A2E;
+            font-size: 50px;
+            margin-left: 30px;
+        }
+
+        .nav-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-item {
+            margin-right: 20px;
+        }
+        </style>
+	</head>
+	<body>
+        <nav class="navbar">
+            <div class="brand">BreviBot</div>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#">About Us</a></li>
+                <li class="nav-item"><a href="#">How it Works?</a></li>
+                <li class="nav-item"><a href="#">FAQ</a></li>
+                <li class="nav-item"><a href="#">Testimonial</a></li>
+            </ul>
+        </nav>
+		<div class="wrapper">
+			<div class="inner">
+				<img src="{%static 'css2/images/image-1.png'%}" alt="" class="image-1">
+				<form action="" method="POST">
+					<h3>New Account?</h3>
+            {% csrf_token %}
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Firstname"name="fname" required>
+					</div>
+                    <div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Lastname"name="lname" required>
+					</div>
+                    <div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Username"name="use" required>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-envelope"></span>
+						<input type="text" class="form-control" placeholder="Mail"name="email" required>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" placeholder="Password" name="pws" required>
+					</div>
+					<button>
+						<span>Register</span>
+					</button>
+                    <p> Already have an account? <a href="{% url 'login-page'%}">Login</a></p>
+				</form>
+				<img src="{%static 'css2/images/image-2.png'%}" alt="" class="image-2">
+			</div>
+			
+		</div>
+        <br><br><br><br><br><br>
+		<footer id="footer">
+
+            <div class="footer-top">
+              <div class="container">
+                <div class="row">
+        
+                  <div class="col-lg-3 col-md-6 footer-contact">
+                    <h3>BreviBot</h3>
+                    <p>
+                        Brevi Bot offers a cutting-edge solution to simplify information consumption providing users with concise summaries that save time and enhance understanding.
+                    </p>
+                  </div>
+        
+                  <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#"style="color:black;opacity: 0.6;">Home</a></li>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#"style="color:black;opacity: 0.6;">About us</a></li>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#"style="color:black;opacity: 0.6;">How It Works?</a></li>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#"style="color:black;opacity: 0.6;">FAQ</a></li>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#"style="color:black;opacity: 0.6;">Privacy policy</a></li>
+                    </ul>
+                  </div> 
+
+                  <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul >
+                      <li><i class="bx bx-chevron-right"></i> <a href="#"style="color:black;opacity: 0.6;">Paragraph Clarity</a></li>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#"style="color:black;opacity: 0.6;">Article Summarizer</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="col-lg-3 col-md-6 footer-links">
+                    <video width="320" height="240" autoplay loop muted>
+                        <source src="{% static '/assets/img/3437118961-preview.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                </div>
+              </div>
+            </div>
+		<script src="{%static 'css2/js/jquery-3.3.1.min.js'%}"></script>
+		<script src="{%static 'css2/js/main.js'%}"></script>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
