@@ -1,0 +1,395 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>BreviBot</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css3/css/bootstrap.css' %}" />
+
+  <!-- font awesome style -->
+  <link href="{% static 'css3/css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <link href="{%static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css3/css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css3/css/responsive.css' %}" rel="stylesheet" />
+  <style>
+    .bod {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10vh;
+      margin-right: 10px;
+    }
+
+    .cont {
+      background-image: url("{% static 'images/image1.jpg' %}");
+      background-size: cover;
+      padding: 20px;
+      border-radius: 10px;
+      width: 800px;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      height: 500px;
+      overflow: auto;
+      position: relative;
+      margin-right: 20px;
+    }
+
+    .cont::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 100%;
+      border-radius: 10px 0 0 10px;
+      animation: borderTransition 5s infinite;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: auto;
+    }
+
+    label {
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      resize: none;
+      height: auto;
+      flex: 1;
+      margin-top: 160px;
+
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color:#f1e2dc;
+      color:black;
+      margin-top: 160px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    button[type="submit"]:hover {
+      background-color:#eb5d1e;
+    }
+
+    .response {
+      margin-bottom: 20px;
+      padding: 10px;
+      background: linear-gradient(90deg, rgba(255,255,255,1) 3%, rgba(237,237,224,1) 37%, rgba(244,244,241,1) 82%, rgba(245,231,231,1) 100%, rgba(0,212,255,1) 100%, rgba(2,0,36,1) 255%);
+      border-radius: 20px;
+      display: inline-block;
+      font-family: cursive;
+    }
+
+    .userinput {
+      margin-bottom: 20px;
+      padding: 10px;
+      background: linear-gradient(90deg, rgba(129,127,127,1) 1%, rgba(237,237,224,1) 7%, rgba(244,244,241,1) 24%, rgba(240,229,224,1) 50%, rgba(237,234,234,1) 74%, rgba(244,248,249,1) 100%, rgba(2,0,36,1) 255%);
+      border-radius: 20px;
+      float: right;
+      font-family: cursive;
+    }
+
+    /* Add scrollbar style */
+    .container::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .container::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+    }
+
+    .container::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+
+    .navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+}
+
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover>a {
+  color: #eb5d1e;
+}
+
+.navbar .dropdown:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover>ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navbar .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
+}
+a{color:black;}
+
+  </style>
+</head>
+
+<body>
+  <div class="sub_page">
+
+    <div class="hero_area">
+      <!-- header section starts -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="{%url 'index'%}">
+              <span>
+                BreviBot
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="{%url 'index'%}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{%url 'index'%}"> About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{%url 'index'%}">How it works?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{%url 'index'%}">FAQ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{%url 'index'%}">Testimonial</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <i class="bi bi-person-fill"style="color:black;margin-left:50px;"></i>
+                  <ul class="dropdown-menu">
+                      <li><a href="{%url 'history'%}">History</a></li>
+                      <li><a href="{%url 'logout'%}">Logout</a></li>
+                  </ul>
+                  <span>{{username}}</span>
+                </li>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+    </div>
+    <!-- about section -->
+    <section class="about_section layout_padding layout_margin">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="bod">
+                <div class="cont">
+                  <div style="background-color: #eb5d1e;width:100%;height:50px;color: black;font-size: 30px;border-radius: 20px;"><b>&nbsp;&nbsp;Brevi Bot</b></div>
+                  <br><br><br>
+                  <div class="response" id="botResponse">
+                    <i class="bi bi-robot"></i>
+                    <strong>Bot:</strong><br>
+                    <p id="typingEffect">Hey friend! BreviBot's here to make our chat snappy and fun!</p>
+                  </div><br><br>
+                  {% if message %}
+                  <div class="userinput">
+                    <div>
+                      <i class="bi bi-person-fill"></i>
+                      <strong>User:</strong><br>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ request.POST.msg|capfirst }}</p><!-- Display user input -->
+                    </div>
+                  </div><br><br><br><br><br>
+                  <div class="response">
+                    <div>
+                      <i class="bi bi-robot"></i>
+                      <strong>Bot:</strong>
+                      {% if message == "What can I help you with?" or message == "What's on your mind?" %}
+                      <p>{{ message|capfirst }}</p>
+                    </div>
+                      <form id="options-form">
+                        <input type="radio" id="option1" name="option" value="ParagraphBites">
+                        <label for="option1">Paragraph Bites</label><br>
+                        <input type="radio" id="option2" name="option" value="ArticleAppetizer">
+                        <label for="option2">Article Appetizer</label><br>
+                      </form>
+                      <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                          const optionsForm = document.getElementById('options-form');
+                          const userInput = document.getElementById('userInput');
+                          optionsForm.addEventListener('change', function () {
+                            const selectedOption = document.querySelector('input[name="option"]:checked').value;
+                            userInput.value = selectedOption;
+                          });
+                        });
+                      </script>
+                      {% else %}
+                      <p>{{ message|capfirst }}</p>
+                    </div>
+                  {% endif %}
+                </div>
+                {% endif %}
+                <form method="post" action="{% url 'chatbot' %}">
+                  {% csrf_token %}
+                  <textarea id="userInput" name="msg" rows="1"
+                    style="height:auto;resize:none;"
+                    oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';"
+                    placeholder="Enter Your Message..."></textarea>
+                  <button type="submit">Send</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <video src="{% static 'css3/robot.mp4' %}" autoplay loop muted controls
+            style="max-width: 3000px; height: 500px;margin-left: 20px; "></video>
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-- end about section -->
+
+    <div class="footer_container">
+      <!-- info section -->
+
+      <section class="info_section ">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-3 ">
+              <div class="info_detail">
+                <h4>
+                  BreviBot
+                </h4>
+                <p>
+                  Brevi Bot offers a cutting-edge solution to simplify information consumption providing users with
+                  concise summaries that save time and enhance understanding.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-2 mx-auto">
+              <div class="info_link_box">
+                <h4>
+                  Links
+                </h4>
+                <div class="info_links">
+                  <a class="" href="{%url 'index'%}">
+                    Home
+                  </a>
+                  <a class="" href="{%url 'index'%}">
+                    About Us
+                  </a>
+                  <a class="" href="{%url 'index'%}">
+                    How it Works?
+                  </a>
+                  <a class="" href="{%url 'index'%}">
+                    FAQ
+                  </a>
+                  <a class="" href="{%url 'index'%}">
+                    Testimonial
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-0 ml-auto">
+              <div class="info_contact">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- end info section -->
+
+      <!-- footer section -->
+      <footer class="footer_section">
+        <div class="container">
+          <p>
+            &copy; <span id="displayYear"></span> All Rights Reserved By
+          </p>
+        </div>
+      </footer>
+      <!-- footer section -->
+    </div>
+  </div>
+</body>
+</html>
