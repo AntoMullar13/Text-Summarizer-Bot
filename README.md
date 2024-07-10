@@ -19,5 +19,4 @@ A simple bot designed to summarize text using Natural Language Processing (NLP) 
    -> css/: Contains CSS files for styling the web interface.
    -> py_files/: Contains Python scripts for text summarization.
    -> templates/: Contains HTML templates for the web interface.
-# License
-This project is licensed under the MIT [LICENSE](LICENSE) - see the LICENSE file for details.
+
