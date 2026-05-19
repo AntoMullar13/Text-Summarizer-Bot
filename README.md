@@ -16,7 +16,7 @@ meaningful summaries.
 
 - Python
 - Natural Language Processing (NLP)
-- Flask (Web Framework)
+- DJango (Web Framework)
 - HTML, CSS (Frontend)
 - NLTK / Sumy (NLP Library)
 
@@ -29,21 +29,21 @@ meaningful summaries.
 ### Steps
 
 1. Clone the repository
-   git clone https://github.com/AntoMullar13/Text-Summarizer-Bot.git
+2. git clone https://github.com/AntoMullar13/Text-Summarizer-Bot.git
 
-2. Navigate to project directory
+3. Navigate to project directory
    cd Text-Summarizer-Bot
 
-3. Install required dependencies
+4. Install required dependencies
    pip install -r requirements.txt
 
-4. Run the application
+5. Run the application
    python app.py
 
-5. Open browser and navigate to
+6. Open browser and navigate to
    http://localhost:5000
 
-6. Enter your text and click Summarize
+7. Enter your text and click Summarize
 
 ## 📁 Project Structure
 
